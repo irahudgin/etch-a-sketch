@@ -10,6 +10,17 @@
   </head>
   <body>
     <h1>Etch-A-Sketch</h1>
+    <div class="slidecontainer">
+      <p id="rangeValue">20</p>
+      <input
+        id="slider"
+        type="range"
+        min="2"
+        max="100"
+        value="20"
+        oninput="rangeValue.innerText = this.value"
+      />
+    </div>
     <div id="mainholder"></div>
   </body>
 </html>
