@@ -1,7 +1,6 @@
 function darken(e) {
   let pixelstyles = window.getComputedStyle(this);
   let opacity = parseFloat(pixelstyles.getPropertyValue("opacity"));
-  let opacitynew = opacity - 0.1;
   this.style.setProperty("opacity", `${opacity - 0.1}`);
 }
 
