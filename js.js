@@ -1,7 +1,8 @@
 function darken(e) {
-  this.classList.add("pixelhoverblack");
-  // this.style.backgroundColor = `rgb(${}, ${}, ${})`;
-  console.log(this.style.opacity);
+  let pixelstyles = window.getComputedStyle(this);
+  let opacity = parseFloat(pixelstyles.getPropertyValue("opacity"));
+  let opacitynew = opacity - 0.1;
+  this.style.setProperty("opacity", `${opacity - 0.1}`);
 }
 
 function resolutionChange(e) {
