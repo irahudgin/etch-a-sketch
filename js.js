@@ -5,7 +5,10 @@ function darken(e) {
 }
 
 function colors(e) {
-  this.style.setProperty("background-color", "rbg(255, 0, 0)");
+  let red = Math.floor(Math.random() * 255);
+  let green = Math.floor(Math.random() * 255);
+  let blue = Math.floor(Math.random() * 255);
+  this.style.setProperty("background-color", `rgb(${red}, ${green}, ${blue})`);
 }
 
 function resolutionChange(e) {
@@ -25,7 +28,7 @@ function resolutionChange(e) {
       "style",
       `width: ${512 / res}px; height: ${512 / res}px;`
     );
-    pixel.addEventListener("mouseover", darken);
+    pixel.addEventListener("mouseover", colors);
     mainholder.appendChild(pixel);
   }
 }
