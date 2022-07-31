@@ -4,6 +4,10 @@ function darken(e) {
   this.style.setProperty("opacity", `${opacity - 0.1}`);
 }
 
+function colors(e) {
+  this.style.setProperty("background-color", "rbg(255, 0, 0)");
+}
+
 function resolutionChange(e) {
   //Clears last pixel count
   let pixel = document.querySelectorAll(".pixel");
