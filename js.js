@@ -5,9 +5,9 @@ function darken(e) {
 }
 
 function colors(e) {
-  let red = Math.floor(Math.random() * 255);
-  let green = Math.floor(Math.random() * 255);
-  let blue = Math.floor(Math.random() * 255);
+  let red = Math.floor(Math.random() * 255) + 50;
+  let green = Math.floor(Math.random() * 255) + 50;
+  let blue = Math.floor(Math.random() * 255) + 50;
   this.style.setProperty("background-color", `rgb(${red}, ${green}, ${blue})`);
 }
 
