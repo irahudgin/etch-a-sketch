@@ -11,6 +11,10 @@ function colors(e) {
   this.style.setProperty("background-color", `rgb(${red}, ${green}, ${blue})`);
 }
 
+function classic(e) {
+  this.style.setProperty("background-color", "rgb(100, 100, 100)");
+}
+
 function resolutionChange(e) {
   //Clears last pixel count
   let pixel = document.querySelectorAll(".pixel");
@@ -28,7 +32,7 @@ function resolutionChange(e) {
       "style",
       `width: ${512 / res}px; height: ${512 / res}px;`
     );
-    pixel.addEventListener("mouseover", colors);
+    pixel.addEventListener("mouseover", classic);
     mainholder.appendChild(pixel);
   }
 }
