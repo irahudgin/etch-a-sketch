@@ -16,22 +16,30 @@
   </head>
   <body>
     <h1>Etch-A-Sketch</h1>
-    <button id="classic">Classic</button>
-    <button id="darken">Darken</button>
-    <button id="colors">Colors</button>
-    <div class="etchholder">
-      <div class="slidecontainer">
-        <p id="rangeValue">20</p>
-        <input
-          id="slider"
-          type="range"
-          min="2"
-          max="100"
-          value="20"
-          oninput="rangeValue.innerText = this.value"
-        />
+    <div class="etchandbuttons">
+      <div class="buttonholder">
+        <button id="classic">Classic</button>
+        <button id="darken">Darken</button>
+        <button id="colors">Colors</button>
       </div>
-      <div id="mainholder"></div>
+      <div class="etchholder">
+        <div class="slidecontainer">
+          <div class="pcontainer">
+            <p id="rangeValue1">20</p>
+            <p>x</p>
+            <p id="rangeValue2">20</p>
+          </div>
+          <input
+            id="slider"
+            type="range"
+            min="2"
+            max="100"
+            value="20"
+            oninput="rangeValue1.innerText = this.value, rangeValue2.innerText = this.value"
+          />
+        </div>
+        <div id="mainholder"></div>
+      </div>
     </div>
   </body>
 </html>

@@ -1,3 +1,8 @@
+body {
+  margin: 0;
+  background-color: bisque;
+}
+
 #mainholder {
   display: flex;
   height: 512px;
@@ -39,13 +44,56 @@
 p {
   text-align: center;
   margin-bottom: 0;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: Georgia, "Times New Roman", Times, sans-serif;
 }
 
 h1 {
   font-family: "Great Vibes", cursive;
-  font-size: 30px;
+  font-size: 80px;
+  margin-bottom: 0;
+  background-color: rgb(216, 52, 52);
+  padding-left: 50px;
+  padding-top: 20px;
+  margin-top: 20px;
 }
 
 #slider {
   width: 512px;
+  margin-top: 0;
+}
+
+.buttonholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+}
+
+button {
+  font-size: 12px;
+  border: 0.2rem solid black;
+  border-radius: 0.5rem;
+  padding: 0.7rem 0.3rem;
+  width: 10rem;
+  min-width: 8rem;
+  text-shadow: 0rem 0rem 0.5rem black;
+  color: white;
+  background: rgb(192, 192, 192);
+  transition: all 0.07s ease;
+}
+
+.etchandbuttons {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.pcontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
