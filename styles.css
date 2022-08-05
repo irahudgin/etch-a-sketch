@@ -57,6 +57,7 @@ h1 {
   padding-left: 50px;
   padding-top: 20px;
   margin-top: 20px;
+  color: white;
 }
 
 #slider {
@@ -79,10 +80,15 @@ button {
   padding: 0.7rem 0.3rem;
   width: 10rem;
   min-width: 8rem;
-  text-shadow: 0rem 0rem 0.5rem black;
-  color: white;
-  background: rgb(192, 192, 192);
+  text-shadow: 0rem 0rem 0.5rem bisque;
+  color: rgb(0, 0, 0);
+  background: rgb(255, 255, 255);
   transition: all 0.07s ease;
+}
+
+.buttonclicked {
+  transform: scale(1.2);
+  border-color: red;
 }
 
 .etchandbuttons {

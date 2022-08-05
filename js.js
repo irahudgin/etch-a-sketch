@@ -17,6 +17,14 @@ function classic(e) {
 
 function resolutionChange(e) {
   //Clears last pixel count
+  const otherbuttons = document.querySelectorAll("button");
+  otherbuttons.forEach((button) => {
+    button.classList.remove("buttonclicked");
+  });
+
+  const button = document.querySelector("#classic");
+  button.classList.add("buttonclicked");
+
   let pixel = document.querySelectorAll(".pixel");
   pixel.forEach((pixel) => {
     pixel.remove();
@@ -39,6 +47,14 @@ function resolutionChange(e) {
 
 const buttonchange = {
   darkenmethod() {
+    const otherbuttons = document.querySelectorAll("button");
+    otherbuttons.forEach((button) => {
+      button.classList.remove("buttonclicked");
+    });
+
+    const button = document.querySelector("#darken");
+    button.classList.add("buttonclicked");
+
     let pixel = document.querySelectorAll(".pixel");
     pixel.forEach((pixel) => {
       pixel.remove();
@@ -59,6 +75,14 @@ const buttonchange = {
     }
   },
   classicmethod() {
+    const otherbuttons = document.querySelectorAll("button");
+    otherbuttons.forEach((button) => {
+      button.classList.remove("buttonclicked");
+    });
+
+    const button = document.querySelector("#classic");
+    button.classList.add("buttonclicked");
+
     let pixel = document.querySelectorAll(".pixel");
     pixel.forEach((pixel) => {
       pixel.remove();
@@ -79,6 +103,14 @@ const buttonchange = {
     }
   },
   colorsmethod() {
+    const otherbuttons = document.querySelectorAll("button");
+    otherbuttons.forEach((button) => {
+      button.classList.remove("buttonclicked");
+    });
+
+    const button = document.querySelector("#colors");
+    button.classList.add("buttonclicked");
+
     let pixel = document.querySelectorAll(".pixel");
     pixel.forEach((pixel) => {
       pixel.remove();
