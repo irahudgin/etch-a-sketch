@@ -15,15 +15,25 @@ function classic(e) {
   this.style.setProperty("background-color", "rgb(100, 100, 100)");
 }
 
-function resolutionChange(e) {
+function resolutionChange(e, func) {
   //Clears last pixel count
   const otherbuttons = document.querySelectorAll("button");
   otherbuttons.forEach((button) => {
     button.classList.remove("buttonclicked");
   });
 
-  const button = document.querySelector("#classic");
-  button.classList.add("buttonclicked");
+  console.log(e);
+
+  if (e.target == document) {
+    const button = document.querySelector("#classic");
+    button.classList.add("buttonclicked");
+  } else if (e.target.id == "slider") {
+    const button = document.querySelector("#classic");
+    button.classList.add("buttonclicked");
+  } else {
+    const button = e.target;
+    button.classList.add("buttonclicked");
+  }
 
   let pixel = document.querySelectorAll(".pixel");
   pixel.forEach((pixel) => {
@@ -40,104 +50,17 @@ function resolutionChange(e) {
       "style",
       `width: ${512 / res}px; height: ${512 / res}px;`
     );
-    pixel.addEventListener("mouseover", classic);
+    pixel.addEventListener("mouseover", func);
     mainholder.appendChild(pixel);
   }
 }
 
-const buttonchange = {
-  darkenmethod() {
-    const otherbuttons = document.querySelectorAll("button");
-    otherbuttons.forEach((button) => {
-      button.classList.remove("buttonclicked");
-    });
-
-    const button = document.querySelector("#darken");
-    button.classList.add("buttonclicked");
-
-    let pixel = document.querySelectorAll(".pixel");
-    pixel.forEach((pixel) => {
-      pixel.remove();
-    });
-
-    let slider = document.querySelector(`#slider`);
-    let res = slider.value;
-
-    for (let i = 0; i < res * res; i++) {
-      let pixel = document.createElement("div");
-      pixel.classList.add("pixel");
-      pixel.setAttribute(
-        "style",
-        `width: ${512 / res}px; height: ${512 / res}px;`
-      );
-      pixel.addEventListener("mouseover", darken);
-      mainholder.appendChild(pixel);
-    }
-  },
-  classicmethod() {
-    const otherbuttons = document.querySelectorAll("button");
-    otherbuttons.forEach((button) => {
-      button.classList.remove("buttonclicked");
-    });
-
-    const button = document.querySelector("#classic");
-    button.classList.add("buttonclicked");
-
-    let pixel = document.querySelectorAll(".pixel");
-    pixel.forEach((pixel) => {
-      pixel.remove();
-    });
-
-    let slider = document.querySelector(`#slider`);
-    let res = slider.value;
-
-    for (let i = 0; i < res * res; i++) {
-      let pixel = document.createElement("div");
-      pixel.classList.add("pixel");
-      pixel.setAttribute(
-        "style",
-        `width: ${512 / res}px; height: ${512 / res}px;`
-      );
-      pixel.addEventListener("mouseover", classic);
-      mainholder.appendChild(pixel);
-    }
-  },
-  colorsmethod() {
-    const otherbuttons = document.querySelectorAll("button");
-    otherbuttons.forEach((button) => {
-      button.classList.remove("buttonclicked");
-    });
-
-    const button = document.querySelector("#colors");
-    button.classList.add("buttonclicked");
-
-    let pixel = document.querySelectorAll(".pixel");
-    pixel.forEach((pixel) => {
-      pixel.remove();
-    });
-
-    let slider = document.querySelector(`#slider`);
-    let res = slider.value;
-
-    for (let i = 0; i < res * res; i++) {
-      let pixel = document.createElement("div");
-      pixel.classList.add("pixel");
-      pixel.setAttribute(
-        "style",
-        `width: ${512 / res}px; height: ${512 / res}px;`
-      );
-      pixel.addEventListener("mouseover", colors);
-      mainholder.appendChild(pixel);
-    }
-  },
-};
-
 let darkenbutton = document.querySelector("#darken");
-darkenbutton.addEventListener("click", buttonchange.darkenmethod);
+darkenbutton.addEventListener("click", (e) => resolutionChange(e, darken));
 let classicbutton = document.querySelector("#classic");
-classicbutton.addEventListener("click", buttonchange.classicmethod);
+classicbutton.addEventListener("click", (e) => resolutionChange(e, classic));
 let colorsbutton = document.querySelector("#colors");
-colorsbutton.addEventListener("click", buttonchange.colorsmethod);
+colorsbutton.addEventListener("click", (e) => resolutionChange(e, colors));
 
-window.onload = resolutionChange;
-slider.addEventListener("click", resolutionChange);
+window.onload = (e) => resolutionChange(e, classic);
+slider.addEventListener("click", (e) => resolutionChange(e, classic));
